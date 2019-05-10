@@ -28,3 +28,62 @@ var Color;
 })(Color || (Color = {}));
 var myColor = Color.Blue;
 console.log(myColor);
+function returnMyName() {
+    return myName;
+}
+console.log(returnMyName());
+// void
+function sayHello() {
+    console.log("Hello!");
+}
+// argument types
+function multiply(value1, value2) {
+    return value1 * value2;
+}
+console.log(multiply(1, 2));
+// function Type
+var myMultiply; // (arguments the function should have to be assigned to this function)
+// myMultiply = sayHello; --- error since sayhello() doesnt not take number argumenets
+myMultiply = multiply;
+// objects
+var userData = {
+    name: "Tawi",
+    age: 27
+};
+// userData = {}; -- Type '{}' is missing the following properties from type '{ name: string; age: number; }': name, aget
+// userData = {  -- error the names of the proporties is important, for funcitons the order of arguments is importnat but in objects the keys are important
+//     a:"Mike",
+//     b: 22
+// }
+var userDataTypes = {
+    name: "Tawi",
+    age: 27
+};
+// Complex Object
+var complex = {
+    data: [100, 3.99, 10],
+    output: function (all) {
+        return this.data;
+    }
+};
+var complex2 = {
+    data: [100, 3.99, 10],
+    output: function (all) {
+        return this.data;
+    }
+};
+// Union types -- allows a variable to accecpt multiple set types - number | boolean
+var myRealAgeNormal = 12;
+// myRealAgeNormal = "12"; -- cannot assign to number
+var myRealAgeUnion = 12;
+myRealAgeUnion = "12";
+// TypeOf
+var finalValue = "A string";
+if (typeof finalValue == "string") {
+    console.log('typeof finalValue = string');
+}
+// Nullable Types
+var canBeNull = 12;
+// canBeNull = null; --- cannot be reassigned when - "strictNullCheck": true,
+var canAlsoBeNull;
+canAlsoBeNull = null;
