@@ -54,7 +54,38 @@ console.log(Math.max(...numbers));
 // ...rest is used when declaring arguments to be accepted
 // ...rest wiil take all arguments, you have to declare those
 // in which you want the ..rest operater to ignore
-function makeArray(name:string, ...args: number[]) {
+function makeArray(name: string, ...args: number[]) {
     return args;
 }
 console.log(makeArray("Max", 1, 2, 6));
+
+// Destructuring
+console.log("DESTRUCTURING");
+console.log('-- Destructuring Arrays --');
+// Arrays
+const myHobbies = ['Cooking', 'Sports'];
+// Computer Member Access operator
+console.log('Computer Member Access operator: ', myHobbies[0], myHobbies[1]);
+
+// assigning variables
+const hobby1 = myHobbies[0];
+const hobby2 = myHobbies[1];
+console.log('variable assign: ', hobby1, hobby2);
+// shorter way - destructuring
+const [hoby1, boby2] = myHobbies;
+console.log('destructuring: ',hoby1, boby2);
+
+console.log('-- Destructuring Objects --');
+// Objects
+const userData = { userName: "Max", age: 27 };
+const usrNm = userData.userName;
+const ag = userData.age;
+console.log('variable assign: ', usrNm, ag);
+
+// Names for paramters have to be the same as object 
+const { userName, age } = userData;
+console.log('destructuring assign: ', userName, age);
+
+// To give aliases
+const { userName: myName, age: myAge } = userData;
+console.log('destructuring new name assign: ', myName, myAge);

@@ -36,10 +36,16 @@ greet();
 var greetFriend = function (friend) { return console.log(friend); };
 greetFriend('Manu');
 // Spread & Rest
+// ...spread is used when passing inot functions
+// turns array in to list of variables
 console.log("SPREAD & REST");
 var numbers = [1, 10, 99 - 5];
+// Math.max example of a funciton that takes a list of numbers
 console.log(Math.max(33, 99, 44, 5, 62, 90));
 console.log(Math.max.apply(Math, numbers));
+// ...rest is used when declaring arguments to be accepted
+// ...rest wiil take all arguments, you have to declare those
+// in which you want the ..rest operater to ignore
 function makeArray(name) {
     var args = [];
     for (var _i = 1; _i < arguments.length; _i++) {
@@ -48,3 +54,29 @@ function makeArray(name) {
     return args;
 }
 console.log(makeArray("Max", 1, 2, 6));
+// Destructuring
+console.log("DESTRUCTURING");
+console.log('-- Destructuring Arrays --');
+// Arrays
+var myHobbies = ['Cooking', 'Sports'];
+// Computer Member Access operator
+console.log('Computer Member Access operator: ', myHobbies[0], myHobbies[1]);
+// assigning variables
+var hobby1 = myHobbies[0];
+var hobby2 = myHobbies[1];
+console.log('variable assign: ', hobby1, hobby2);
+// shorter way - destructuring
+var hoby1 = myHobbies[0], boby2 = myHobbies[1];
+console.log('destructuring: ', hoby1, boby2);
+console.log('-- Destructuring Objects --');
+// Objects
+var userData = { userName: "Max", age: 27 };
+var usrNm = userData.userName;
+var ag = userData.age;
+console.log('variable assign: ', usrNm, ag);
+// Names for paramters have to be the same as object 
+var userName = userData.userName, age = userData.age;
+console.log('destructuring assign: ', userName, age);
+// To give aliases
+var myName = userData.userName, myAge = userData.age;
+console.log('destructuring new name assign: ', myName, myAge);
