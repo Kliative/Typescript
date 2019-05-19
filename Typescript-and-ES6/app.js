@@ -87,5 +87,5 @@ var personName = "Max";
 var personGreeting = "Hello, I'm " + personName + ", I'm so cool!";
 console.log(personGreeting);
 // Multiline + variables
-var multiLineString = "\nHey! Yeah You, \nI am on multiple lines\nin the\nsource\n\nc\no\nd\ne \n\n" + "${ <- use these for intrapolation -> }" + "\n\nThanks " + personName;
+var multiLineString = "\nHey! Yeah You, \nI am on multiple lines\nin the\nsource\n\nc\no\nd\ne \n\n" + "${ <- use these for intrapolation -> } = ${}" + "\n\nThanks " + personName;
 console.log(multiLineString);
