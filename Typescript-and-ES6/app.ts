@@ -89,3 +89,28 @@ console.log('destructuring assign: ', userName, age);
 // To give aliases
 const { userName: myName, age: myAge } = userData;
 console.log('destructuring new name assign: ', myName, myAge);
+
+
+// Template Literals
+console.log("TEMPLATE LITERALS");
+// Normal variable string
+const personName = "Max";
+const personGreeting =  "Hello, I'm " + personName + ", I'm so cool!";
+console.log(personGreeting);
+// Multiline + variables
+const multiLineString = `
+Hey! Yeah You, 
+I am on multiple lines
+in the
+source
+
+c
+o
+d
+e 
+
+${"${ <- use these for intrapolation -> } = ${}"}
+
+Thanks ${personName}`;
+console.log(multiLineString);
+
