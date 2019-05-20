@@ -48,3 +48,45 @@ var Tawanda = /** @class */ (function (_super) {
 }(Person));
 var tawanda = new Tawanda("klish3");
 console.log(tawanda);
+// Getters and Setters 
+var Plants = /** @class */ (function () {
+    function Plants() {
+        this._species = "Default";
+    }
+    Object.defineProperty(Plants.prototype, "species", {
+        // Perform some action when getting value
+        get: function () {
+            return this._species;
+        },
+        // Perform some action when setting value
+        set: function (value) {
+            if (value.length > 3) {
+                this._species = value;
+            }
+            else {
+                this._species = "Defualt";
+            }
+        },
+        enumerable: true,
+        configurable: true
+    });
+    return Plants;
+}());
+var plant = new Plants();
+console.log(plant.species);
+plant.species = "AB";
+console.log(plant.species);
+plant.species = "Green Plant";
+console.log(plant.species);
+// Static Properties & Methods
+var Helpers = /** @class */ (function () {
+    function Helpers() {
+    }
+    Helpers.calcCircumference = function (diameter) {
+        return this.PI * diameter;
+    };
+    Helpers.PI = 3.14;
+    return Helpers;
+}());
+console.log(2 * Helpers.PI);
+console.log(Helpers.calcCircumference(8));
