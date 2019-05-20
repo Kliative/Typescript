@@ -13,15 +13,30 @@ class Person {
         this.setType("Old Guy");
     }
 
-   private setType(type: string) {
+    private setType(type: string) {
         this.type = type;
         console.log(this.type);
     }
 }
 
 const person = new Person("Tawi", "kliative");
-console.log('person',person);
+console.log('person', person);
 // console.log(person.name, person.username, person.age, person.type);
-console.log('person breakdown ',person.name, person.username);
+console.log('person breakdown ', person.name, person.username);
 person.printAge();
 // person.setType("Cool guy"); // This wont work if function is set to private
+
+// Inheretance
+
+class Tawanda extends Person {
+    // name = "Shingirai"
+
+
+    constructor(username: string) {
+        super("Shingirai", username);
+        this.age = 32;
+    }
+}
+
+const tawanda = new Tawanda("klish3");
+console.log(tawanda);
