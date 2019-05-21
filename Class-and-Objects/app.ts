@@ -60,7 +60,7 @@ class Plants {
     }
 }
 
-let plant =  new Plants();
+let plant = new Plants();
 console.log(plant.species);
 plant.species = "AB";
 console.log(plant.species);
@@ -76,3 +76,43 @@ class Helpers {
 }
 console.log(2 * Helpers.PI);
 console.log(Helpers.calcCircumference(8));
+
+// Abstract Classes
+abstract class Project {
+    projectName: string = "Default";
+    budget: number = 100;
+
+    abstract changeName(name: string): void;
+
+    calcBudget() {
+        return this.budget * 2;
+    }
+}
+
+class ITProject extends Project {
+    changeName(name: string): void {
+        this.projectName = name;
+    }
+}
+
+let newProject = new ITProject();
+console.log(newProject);
+newProject.changeName("Support IT Project");
+console.log(newProject);
+
+// Private Constructors
+class OnlyOne {
+    private static instance: OnlyOne;
+
+    private constructor(public name: string) { }
+
+    static getInstance() {
+        if (!OnlyOne.instance) {
+            OnlyOne.instance = new OnlyOne('The Only One');
+        }
+        return OnlyOne.instance;
+    }
+}
+
+let wrong = new OnlyOne('The Only One...Again'); // is private and only accessible within the class declaration.
+let right = OnlyOne.getInstance();
