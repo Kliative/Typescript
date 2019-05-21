@@ -116,3 +116,26 @@ class OnlyOne {
 
 let wrong = new OnlyOne('The Only One...Again'); // is private and only accessible within the class declaration.
 let right = OnlyOne.getInstance();
+
+
+// ReadOnlyOne 
+class ReadOnlyOne {
+    private static instance: ReadOnlyOne;
+    
+    // readonly keyword does that same thing as a getter without a setter
+    public readonly name: string;
+
+    private constructor(name: string) {
+        this.name = name;
+
+     }
+
+    static getInstance() {
+        if (!ReadOnlyOne.instance) {
+            ReadOnlyOne.instance = new ReadOnlyOne('The Only One');
+        }
+        return ReadOnlyOne.instance;
+    }
+}
+
+let readOnlyOneInstance = ReadOnlyOne.getInstance();
